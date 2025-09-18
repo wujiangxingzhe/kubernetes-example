@@ -7,11 +7,13 @@ data:
     );
 kind: ConfigMap
 metadata:
+  namespace: example
   name: pg-init-script
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: example
   name: postgres
   labels:
     app: database
@@ -46,6 +48,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: example
   name: pg-service
   labels:
     app: database

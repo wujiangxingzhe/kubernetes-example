@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: example
   name: frontend
   labels:
     app: frontend
@@ -25,12 +26,13 @@ spec:
             memory: "128Mi"
             cpu: "128m"
           limits:
-            memory: "256Mi"
+            memory: "512Mi"
             cpu: "256m"
 ---
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: example
   name: frontend-service
 spec:
   type: ClusterIP

@@ -1,6 +1,7 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
+  namespace: example
   name: frontend
 spec:
   scaleTargetRef:
@@ -21,6 +22,7 @@ spec:
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
+  namespace: example
   name: backend
 spec:
   scaleTargetRef:
